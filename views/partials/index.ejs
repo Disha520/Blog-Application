@@ -1,0 +1,105 @@
+<%- include("header.ejs") %>
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Blog Log</h1>
+                    <span class="subheading">A Blog Website</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<!-- <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7"> -->
+            <!-- Post preview-->
+            <!-- <div class="post-preview">
+                <a href="/post">
+                    <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
+                    <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
+                </a>
+                <p class="post-meta">
+                    Posted by
+                    <a href="#!">Start Bootstrap</a>
+                    on September 24, 2023
+                </p>
+            </div> -->
+            <!-- Divider-->
+            <!-- <hr class="my-4" /> -->
+            <!-- Post preview-->
+            <!-- <div class="post-preview">
+                <a href="/post"><h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2></a>
+                <p class="post-meta">
+                    Posted by
+                    <a href="#!">Start Bootstrap</a>
+                    on September 18, 2023
+                </p>
+            </div> -->
+            <!-- Divider-->
+            <!-- <hr class="my-4" /> -->
+            <!-- Post preview-->
+            <!-- <div class="post-preview">
+                <a href="/post">
+                    <h2 class="post-title">Science has not yet mastered prophecy</h2>
+                    <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</h3>
+                </a>
+                <p class="post-meta">
+                    Posted by
+                    <a href="#!">Start Bootstrap</a>
+                    on August 24, 2023
+                </p>
+            </div> -->
+            <!-- Divider-->
+            <!-- <hr class="my-4" /> -->
+            <!-- Post preview-->
+            <!-- <div class="post-preview">
+                <a href="/post">
+                    <h2 class="post-title">Failure is not an option</h2>
+                    <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
+                </a>
+                <p class="post-meta">
+                    Posted by
+                    <a href="#!">Start Bootstrap</a>
+                    on July 8, 2023
+                </p>
+            </div> -->
+            <!-- Divider-->
+            <!-- <hr class="my-4" /> -->
+            <!-- Pager-->
+            <article class="mb-4">
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-md-10 col-lg-8 col-xl-7">
+                            <div class="container">
+                                <h1>Blog Posts</h1>
+                                <hr>
+                                <% if (posts.length > 0) { %>
+                                    <% posts.forEach(post => { %>
+                                        <div class="post">
+                                            <h2><%= post.title %></h2>
+                                            <p><%= post.content %></p>
+                                            
+                                            <hr>
+                                        </div>
+                                    <% }) %>
+                                <% } else { %>
+                                    <p>No posts available. Please submit a new blog post.</p>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="/post">Posts →</a></div>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include("footer.ejs") %>

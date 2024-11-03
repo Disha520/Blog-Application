@@ -1,0 +1,65 @@
+<%- include("partials/header.ejs") %>
+
+<header class="masthead" style="background-image: url('assets/img/post-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading">
+                    <h1>Create Blogs and posts</h1>
+                    <h2 class="subheading">Write your journey</h2>
+                    <!-- <span class="meta">Posted by <a href="#!">Start Bootstrap</a> on August 24, 2023</span> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div id="blog" class="blog-content">
+        <!-- <h1>Write</h1> -->
+            <!-- <form action="/submit-blog" method="POST">
+                <label for="Title"></label>
+                <input type="text" class="medium-title" placeholder="Title" required>
+        
+                <label for="content"></label>
+                <textarea class="medium-textarea" placeholder="Start writing..."></textarea>
+                <button type="submit">Publish</button>
+            </form> -->
+            <div class="container">
+                <h1><%= post ? "Edit Blog Post" : "Create a New Blog Post" %></h1>
+                
+                <!-- Form for new or editing post -->
+                <form action="<%= post ? `/updatepost/${post.id}` : '/submit-blog' %>" method="POST">
+                    <div class="form-group">
+                        <label for="title"></label>
+                        <!-- <input type="text" class="medium-title" id="title" name="title" value="<%# post ? post.title : '' %>" required> -->
+                        <input type="text" class="medium-title" id="title" placeholder="Title" name="title" value="<%= post ? post.title : '' %>" required>
+
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="content"></label>
+                        <!-- <textarea id="content" class="medium-textarea" name="content" rows="5" required><%# post ? post.content : '' %></textarea> -->
+                        <textarea id="content" class="medium-textarea" name="content" placeholder="Start writing..." required><%= post ? post.content : '' %></textarea>
+ 
+                    </div>
+                    
+                    <button type="submit" class="btn btn-outline-secondary"><%= post ? "Save Changes" : "Create Post" %></button>
+                </form>
+                
+                <!-- Link to go back if user cancels -->
+                <a href="/post">Cancel</a>
+            <!-- Previous code -->
+            <!-- <form action="/submit-blog" method="POST">
+                <label for="title"></label>
+                <input type="text" class="medium-title" id="title" placeholder="Title" name="title">
+    
+                <label for="content"></label>
+                <textarea id="content" class="medium-textarea" name="content" placeholder="Start writing..."></textarea>
+    
+                <button type="submit" class="btn btn-outline-secondary">Publish</button>
+            </form> -->
+    </div>
+</main>
+
+<%- include("partials/footer.ejs") %>
